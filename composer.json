@@ -1,15 +1,16 @@
 {
 	"name": "den/gendiff",
-	"bin": [
-		"bin/gendiff"
-	],
 	"type": "This is utility for compare and find differences between two configuration files",
 	"description": "Utility - gendiff. Second project in hexlet",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "aic513",
 			"email": "aic513@mail.ru"
 		}
+	],
+	"bin": [
+		"bin/gendiff"
 	],
 	"keywords": [
 		"hexlet",
@@ -18,7 +19,7 @@
 		"aic513"
 	],
 	"require": {
-		"docopt/docopt": "*"
+		"docopt/docopt": "^1.0"
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "*"
@@ -30,5 +31,7 @@
 		"files": [
 			"src/gendiff.php"
 		]
-	}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
