@@ -1,0 +1,34 @@
+{
+	"name": "den/gendiff",
+	"bin": [
+		"bin/gendiff"
+	],
+	"type": "This is utility for compare and find differences between two configuration files",
+	"description": "Utility - gendiff. Second project in hexlet",
+	"authors": [
+		{
+			"name": "aic513",
+			"email": "aic513@mail.ru"
+		}
+	],
+	"keywords": [
+		"hexlet",
+		"gendiff",
+		"second project",
+		"aic513"
+	],
+	"require": {
+		"docopt/docopt": "*"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "*"
+	},
+	"scripts": {
+		"phpcs": "phpcs"
+	},
+	"autoload": {
+		"files": [
+			"src/gendiff.php"
+		]
+	}
+}
