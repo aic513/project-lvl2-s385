@@ -1,6 +1,5 @@
 {
 	"name": "den/gendiff",
-	"type": "This is utility for files",
 	"description": "Utility - gendiff. Second project in hexlet",
 	"license": "MIT",
 	"authors": [
