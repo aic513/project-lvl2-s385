@@ -26,8 +26,7 @@
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "*",
-		"phpunit/phpunit": "*",
-		"codeclimate/php-test-reporter": "dev-master"
+		"phpunit/phpunit": "*"
 	},
 	"scripts": {
 		"phpcs": "phpcs",
