@@ -5,3 +5,5 @@
 [![Build Status](https://travis-ci.org/aic513/project-lvl2-s385.svg?branch=master)](https://travis-ci.org/aic513/project-lvl2-s385)
 
 first task  - https://asciinema.org/connect/cee3b7ca-4739-47ce-927e-94ddaf0c3e26
+
+second task - https://asciinema.org/a/ob5RZEspESQHaxD9zJ6nURcti
