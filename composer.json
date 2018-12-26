@@ -26,7 +26,8 @@
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "*",
-		"phpunit/phpunit": "*"
+		"phpunit/phpunit": "*",
+		"codeclimate/php-test-reporter": "dev-master"
 	},
 	"scripts": {
 		"phpcs": "phpcs",
@@ -35,15 +36,15 @@
 		"test": "phpunit tests"
 	},
 	"autoload": {
+		"psr-4": {
+			"Differ\\": "src/",
+			"Differ\\Tests\\": "tests"
+		},
 		"files": [
 			"src/gendiff.php",
 			"src/index.php",
 			"src/parser.php",
 			"src/render.php"
-		],
-		"psr-4": {
-			"Differ\\": "src/",
-			"Differ\\Tests\\": "tests"
-		}
+		]
 	}
 }
