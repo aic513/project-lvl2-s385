@@ -34,4 +34,3 @@ class DifferTest extends TestCase
             genDiff($beforeJsonFile, $afterJsonFile));
     }
 }
-
