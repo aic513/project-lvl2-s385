@@ -30,7 +30,8 @@ class DifferTest extends TestCase
 - timeout: 50
 - proxy: 123.234.53.22
 + verbose: true
-}', genDiff($beforeJsonFile, $afterJsonFile)
+}',
+        genDiff($beforeJsonFile, $afterJsonFile)
         );
     }
 }
