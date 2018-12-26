@@ -3,6 +3,6 @@
 
 require_once(__DIR__ . "/../src/bootstrap.php");
 
-use function Gendiff\run;
+use function \Differ\Index\run;
 
 run();
