@@ -24,13 +24,13 @@ class DifferTest extends TestCase
         $beforeJsonFile = __DIR__ . '/fixtures/before.json';
         $afterJsonFile = __DIR__ . '/fixtures/after.json';
         $this->assertEquals(
-        '{
+            '{
   host: hexlet.io
 + timeout: 20
 - timeout: 50
 - proxy: 123.234.53.22
 + verbose: true
 }',
-        genDiff($beforeJsonFile, $afterJsonFile));
+            genDiff($beforeJsonFile, $afterJsonFile));
     }
 }
