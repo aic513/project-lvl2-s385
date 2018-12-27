@@ -1,7 +1,8 @@
 <?php
+
 namespace Differ\Render;
 
 function render($result)
 {
-    return '{' . PHP_EOL . implode("\n", $result) . PHP_EOL . '}';
+    return '{' . PHP_EOL . implode(PHP_EOL, $result) . PHP_EOL . '}';
 }

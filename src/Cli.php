@@ -1,6 +1,6 @@
 <?php
 
-namespace Differ\Index;
+namespace Differ\Cli;
 
 use Docopt;
 use function Differ\GenDiff\genDiff;
@@ -22,7 +22,7 @@ function run()
 {
     $handle = Docopt::handle(DOC);
     $isFullPath = function ($path) {
-        return $path[0] == DIRECTORY_SEPARATOR;
+        return $path[0] === DIRECTORY_SEPARATOR;
     };
     $firstFile = $handle->args['<firstFile>'];
     $secondFile = $handle->args['<secondFile>'];

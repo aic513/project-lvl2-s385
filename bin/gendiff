@@ -1,8 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-require_once(__DIR__ . "/../src/bootstrap.php");
+require_once __DIR__ . '/../src/bootstrap.php';
 
-use function \Differ\Index\run;
+use function \Differ\Cli\run;
 
 run();

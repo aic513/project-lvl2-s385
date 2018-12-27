@@ -1,49 +1,48 @@
 {
-	"name": "den/gendiff",
-	"description": "Utility - gendiff. Second project in hexlet",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "aic513",
-			"email": "aic513@mail.ru"
-		}
-	],
-	"minimum-stability": "dev",
-	"prefer-stable": true,
-	"bin": [
-		"bin/gendiff"
-	],
-	"keywords": [
-		"hexlet",
-		"gendiff",
-		"second project",
-		"aic513"
-	],
-	"require": {
-		"docopt/docopt": "^1.0",
-		"ext-json": "*",
-		"funct/funct": "*"
-	},
-	"require-dev": {
-		"squizlabs/php_codesniffer": "*",
-		"phpunit/phpunit": "*"
-	},
-	"scripts": {
-		"phpcs": "phpcs",
-		"phpcbf": "phpcbf",
-		"phpunit": "phpunit",
-		"test": "phpunit tests"
-	},
-	"autoload": {
-		"psr-4": {
-			"Differ\\": "src/",
-			"Differ\\Tests\\": "tests"
-		},
-		"files": [
-			"src/gendiff.php",
-			"src/index.php",
-			"src/parser.php",
-			"src/render.php"
-		]
-	}
+    "name": "den/gendiff",
+    "description": "Utility - gendiff. Second project in hexlet",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "aic513",
+            "email": "aic513@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "bin": [
+        "bin/gendiff"
+    ],
+    "keywords": [
+        "hexlet",
+        "gendiff",
+        "second project",
+        "aic513"
+    ],
+    "require": {
+        "docopt/docopt": "^1.0",
+        "ext-json": "*",
+        "funct/funct": "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "phpunit/phpunit": "*"
+    },
+    "scripts": {
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf",
+        "phpunit": "phpunit",
+        "test": "phpunit tests"
+    },
+    "autoload": {
+        "psr-4": {
+            "Differ\\": "src/",
+            "Differ\\Tests\\": "tests"
+        },
+        "files": [
+            "src/gendiff.php",
+            "src/Cli.php",
+            "src/render.php"
+        ]
+    }
 }
