@@ -3,6 +3,9 @@
 namespace Differ\GenDiff;
 
 use function Differ\Render\render;
+use function Differ\Parse\getExtension;
+use function Differ\Parse\getData;
+use function Differ\Parse\parse;
 
 function convertBooleanToString($bool)
 {
@@ -11,8 +14,15 @@ function convertBooleanToString($bool)
 
 function genDiff($file1, $file2)
 {
-    $fileBefore = json_decode(file_get_contents($file1), true);
-    $fileAfter = json_decode(file_get_contents($file2), true);
+    $fileBeforeExtension = getExtension($file1);
+    $fileAfterExtension = getExtension($file2);
+    
+    $fileBeforeData = getData($file1);
+    $fileAfterData = getData($file2);
+    
+    $fileBefore = parse($fileBeforeExtension, $fileBeforeData);
+    $fileAfter = parse($fileAfterExtension, $fileAfterData);
+    
     $keys = array_unique(array_merge(array_keys($fileBefore), array_keys($fileAfter)));
     $result = array_reduce($keys, function ($acc, $key) use ($fileBefore, $fileAfter) {
         
