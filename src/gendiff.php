@@ -3,7 +3,7 @@
 namespace Differ\GenDiff;
 
 use function Differ\Render\render;
-use function Differ\Parse\getExtension;
+use function Differ\Parse\getType;
 use function Differ\Parse\getData;
 use function Differ\Parse\parse;
 
@@ -14,8 +14,8 @@ function convertBooleanToString($bool)
 
 function genDiff($file1, $file2)
 {
-    $fileBeforeExtension = getExtension($file1);
-    $fileAfterExtension = getExtension($file2);
+    $fileBeforeExtension = getType($file1);
+    $fileAfterExtension = getType($file2);
     
     $fileBeforeData = getData($file1);
     $fileAfterData = getData($file2);

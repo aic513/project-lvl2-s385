@@ -4,9 +4,9 @@ namespace Differ\Parse;
 
 use Symfony\Component\Yaml\Yaml;
 
-function parse($extension, $data)
+function parse($type, $data)
 {
-    switch ($extension) {
+    switch ($type) {
         case 'json':
             return json_decode($data, true);
             break;
@@ -14,17 +14,24 @@ function parse($extension, $data)
             return Yaml::parse($data);
             break;
         default:
-            return null;
-            break;
+            throw new \Exception("Unsupported content type {$type}".PHP_EOL);
     }
 }
 
-function getExtension($file)
+function getType($file)
 {
     return pathinfo($file, PATHINFO_EXTENSION);
 }
 
 function getData($file)
 {
-    return file_get_contents($file);
+    if(file_exists($file) && is_readable($file)) {
+        $content = file_get_contents($file);
+        if (empty($content)) {
+            throw new \Exception("File {$file} is empty or has unsupported content");
+        }
+    
+        return file_get_contents($file);
+    }
+    throw new \Exception("File '{$file}' is not exists");
 }

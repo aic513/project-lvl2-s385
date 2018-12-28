@@ -20,13 +20,20 @@ DOC;
 
 function run()
 {
-    $handle = Docopt::handle(DOC);
-    $isFullPath = function ($path) {
-        return $path[0] === DIRECTORY_SEPARATOR;
-    };
-    $firstFile = $handle->args['<firstFile>'];
-    $secondFile = $handle->args['<secondFile>'];
-    $firstPath = $isFullPath($firstFile) ? $firstFile : \getcwd() . DIRECTORY_SEPARATOR . $firstFile;
-    $secondPath = $isFullPath($secondFile) ? $secondFile : \getcwd() . DIRECTORY_SEPARATOR . $secondFile;
+    try {
+        $handle = Docopt::handle(DOC);
+        $isFullPath = function ($path) {
+            return $path[0] === DIRECTORY_SEPARATOR;
+        };
+        $firstFile = $handle->args['<firstFile>'];
+        $secondFile = $handle->args['<secondFile>'];
+        $firstPath = $isFullPath($firstFile) ? $firstFile : \getcwd() . DIRECTORY_SEPARATOR . $firstFile;
+        $secondPath = $isFullPath($secondFile) ? $secondFile : \getcwd() . DIRECTORY_SEPARATOR . $secondFile;
+    } catch (\Exception $exception) {
+        print_r($exception->getMessage() . PHP_EOL);
+    }
     print_r(genDiff($firstPath, $secondPath) . PHP_EOL);
 }
+
+
+
