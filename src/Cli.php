@@ -34,6 +34,3 @@ function run()
     }
     print_r(genDiff($firstPath, $secondPath) . PHP_EOL);
 }
-
-
-

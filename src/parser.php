@@ -14,7 +14,7 @@ function parse($type, $data)
             return Yaml::parse($data);
             break;
         default:
-            throw new \Exception("Unsupported content type {$type}".PHP_EOL);
+            throw new \Exception("Unsupported content type {$type}" . PHP_EOL);
     }
 }
 
@@ -25,12 +25,12 @@ function getType($file)
 
 function getData($file)
 {
-    if(file_exists($file) && is_readable($file)) {
+    if (file_exists($file) && is_readable($file)) {
         $content = file_get_contents($file);
         if (empty($content)) {
             throw new \Exception("File {$file} is empty or has unsupported content");
         }
-    
+        
         return file_get_contents($file);
     }
     throw new \Exception("File '{$file}' is not exists");
