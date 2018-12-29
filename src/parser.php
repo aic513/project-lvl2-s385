@@ -26,12 +26,12 @@ function getType($file)
 function getData($file)
 {
     if (file_exists($file) && is_readable($file)) {
-        $content = file_get_contents($file);
+        $content = file_get_contents($file, true);
         if (empty($content)) {
             throw new \Exception("File {$file} is empty or has unsupported content");
         }
         
-        return file_get_contents($file);
+        return file_get_contents($file, true);
     }
     throw new \Exception("File '{$file}' is not exists");
 }

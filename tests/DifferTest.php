@@ -22,4 +22,13 @@ class DifferTest extends TestCase
         $expected = trim(file_get_contents(__DIR__ . '/fixtures/expected.txt'));
         $this->assertEquals($expected, genDiff($beforeYamlFile, $afterYamlFile));
     }
+    
+    public function testInnerJson()
+    {
+        $beforeInnerJson = __DIR__ . '/fixtures/beforeInner.json';
+        $afterInnerJson = __DIR__ . '/fixtures/afterInner.json';
+        $expected = __DIR__ . '/fixtures/expectedInner.txt';
+        $expected = rtrim(file_get_contents($expected));
+        $this->assertEquals($expected, genDiff($beforeInnerJson, $afterInnerJson));
+    }
 }

@@ -9,3 +9,5 @@ first task  - https://asciinema.org/connect/cee3b7ca-4739-47ce-927e-94ddaf0c3e26
 second task - https://asciinema.org/a/ob5RZEspESQHaxD9zJ6nURcti
 
 third task - https://asciinema.org/a/o9MBbsMODFTAw2hSnGpUUHOJD
+
+fourth task - https://asciinema.org/a/nAjpLhs6lNRDiQjeoD1OszGbw

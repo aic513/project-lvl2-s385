@@ -44,7 +44,8 @@
             "src/gendiff.php",
             "src/Cli.php",
             "src/render.php",
-            "src/parser.php"
+            "src/parser.php",
+            "src/ast.php"
         ]
     }
 }
