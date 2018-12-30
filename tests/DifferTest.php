@@ -55,4 +55,12 @@ class DifferTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/fixtures/expectedPlainFormatResultForSimpleStructure.txt');
         $this->assertEquals($expected, genDiff($beforeJsonFile, $afterJsonFile, 'plain'));
     }
+    
+    public function testJsonGenDiff()
+    {
+        $beforeJsonFile = __DIR__ . '/fixtures/before.json';
+        $afterJsonFile = __DIR__ . '/fixtures/after.json';
+        $expected = trim(file_get_contents(__DIR__ . '/fixtures/expectedJson.txt'));
+        $this->assertEquals($expected, genDiff($beforeJsonFile, $afterJsonFile, 'json'));
+    }
 }
