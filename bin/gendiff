@@ -3,6 +3,6 @@
 
 require_once __DIR__ . '/../src/bootstrap.php';
 
-use function \Differ\Cli\run;
+use function \App\Cli\run;
 
 run();

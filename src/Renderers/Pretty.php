@@ -1,9 +1,8 @@
 <?php
 
-namespace Differ\Pretty;
+namespace App\Renderers\Pretty;
 
 use function Funct\Collection\flattenAll;
-use function Differ\Render\render;
 
 function pretty($ast)
 {
@@ -36,16 +35,16 @@ function getPretty($item, $level)
             ];
         
         case 'unchanged':
-            return [getSpace($level) . "  $key: $before"];
+            return getSpace($level) . "  $key: $before";
         
         case 'changed':
             return [getSpace($level) . "+ $key: $after", getSpace($level) . "- $key: $before"];
         
         case 'deleted':
-            return [getSpace($level) . "- $key: $before"];
+            return getSpace($level) . "- $key: $before";
         
         case 'added':
-            return [getSpace($level) . "+ $key: $after"];
+            return getSpace($level) . "+ $key: $after";
     }
 }
 
@@ -58,12 +57,11 @@ function prettyInner($value, $level)
 {
     if (!is_array($value)) {
         return $value;
-    } else {
-        $keys = array_keys($value);
-        $result = array_map(function ($item) use ($value, $level) {
-            return [PHP_EOL . getSpace($level + 1) . "$item: $value[$item]"];
-        }, $keys);
     }
+    $keys = array_keys($value);
+    $result = array_map(function ($item) use ($value, $level) {
+        return [PHP_EOL . getSpace($level + 1) . "$item: $value[$item]"];
+    }, $keys);
     
     return implode("", flattenAll(array_merge(["{"], $result, [PHP_EOL . getSpace($level) . "  }"])));
 }

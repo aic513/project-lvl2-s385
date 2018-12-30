@@ -37,17 +37,17 @@
     },
     "autoload": {
         "psr-4": {
-            "Differ\\": "src/",
-            "Differ\\Tests\\": "tests"
+            "App\\": "src/",
+            "App\\Tests\\": "tests"
         },
         "files": [
-            "src/gendiff.php",
+            "src/GenDiff.php",
             "src/Cli.php",
-            "src/parser.php",
-            "src/ast.php",
-            "src/renders/render.php",
-            "src/renders/plain.php",
-            "src/renders/pretty.php"
+            "src/Parser.php",
+            "src/Ast.php",
+            "src/Renderers/Render.php",
+            "src/Renderers/Plain.php",
+            "src/Renderers/Pretty.php"
         ]
     }
 }

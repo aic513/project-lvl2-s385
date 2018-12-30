@@ -1,5 +1,5 @@
 <?php
-namespace Differ\Plain;
+namespace App\Renderes\Plain;
 use function Funct\Collection\flattenAll;
 
 function plain($ast)

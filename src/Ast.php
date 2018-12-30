@@ -1,6 +1,6 @@
 <?php
 
-namespace Differ\Ast;
+namespace App\Ast;
 
 function boolToStr($bool)
 {
@@ -17,7 +17,7 @@ function getAst($before, $after)
         
         if (array_key_exists($key, $before) && array_key_exists($key, $after)) {
             if (is_array($beforeValue) && is_array($afterValue)) {
-                $nodes = [
+                $node = [
                     'type' => 'nested',
                     'key' => $key,
                     'beforeValue' => null,
@@ -25,7 +25,7 @@ function getAst($before, $after)
                     'children' => getAst($beforeValue, $afterValue)
                 ];
             } elseif ($beforeValue === $afterValue) {
-                $nodes = [
+                $node = [
                     'type' => 'unchanged',
                     'key' => $key,
                     'beforeValue' => $beforeValue,
@@ -33,7 +33,7 @@ function getAst($before, $after)
                     'children' => null
                 ];
             } else {
-                $nodes = [
+                $node = [
                     'type' => 'changed',
                     'key' => $key,
                     'beforeValue' => $beforeValue,
@@ -43,7 +43,7 @@ function getAst($before, $after)
             }
         }
         if (array_key_exists($key, $before) && !array_key_exists($key, $after)) {
-            $nodes = [
+            $node = [
                 'type' => 'deleted',
                 'key' => $key,
                 'beforeValue' => $beforeValue,
@@ -52,7 +52,7 @@ function getAst($before, $after)
             ];
         }
         if (!array_key_exists($key, $before) && array_key_exists($key, $after)) {
-            $nodes = [
+            $node = [
                 'type' => 'added',
                 'key' => $key,
                 'beforeValue' => null,
@@ -60,6 +60,6 @@ function getAst($before, $after)
                 'children' => null
             ];
         }
-        return $nodes;
+        return $node;
     }, $keys);
 }
