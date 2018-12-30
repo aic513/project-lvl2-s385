@@ -26,11 +26,12 @@ function run()
     };
     $firstFile = $handle->args['<firstFile>'];
     $secondFile = $handle->args['<secondFile>'];
+    $format = $handle->args['--format'];
     $firstPath = $isFullPath($firstFile) ? $firstFile : \getcwd() . DIRECTORY_SEPARATOR . $firstFile;
     $secondPath = $isFullPath($secondFile) ? $secondFile : \getcwd() . DIRECTORY_SEPARATOR . $secondFile;
     
     try {
-        echo genDiff($firstPath, $secondPath);
+        echo genDiff($firstPath, $secondPath, $format);
     } catch (\Exception $exception) {
         echo $exception->getMessage() . PHP_EOL;
     }

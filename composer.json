@@ -43,9 +43,11 @@
         "files": [
             "src/gendiff.php",
             "src/Cli.php",
-            "src/render.php",
             "src/parser.php",
-            "src/ast.php"
+            "src/ast.php",
+            "src/renders/render.php",
+            "src/renders/plain.php",
+            "src/renders/pretty.php"
         ]
     }
 }

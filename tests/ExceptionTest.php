@@ -12,19 +12,31 @@ class ExceptionTest extends TestCase
         $beforeJsonFile = __DIR__ . '/fixtures/before.json';
         $emptyJsonFile = __DIR__ . '/fixtures/empty.json';
         try {
-            gendiff($beforeJsonFile, $emptyJsonFile);
+            gendiff($beforeJsonFile, $emptyJsonFile, 'pretty');
             $this->fail('exception expected');
         } catch (\Exception $e) {
             $this->assertTrue(true);
         }
     }
     
-    public function testUnsuportedTypeFile()
+    public function testUnsupportedTypeFile()
     {
         $beforeJsonFile = __DIR__ . '/fixtures/before.json';
         $expectedTxtFile = __DIR__ . '/fixtures/expected.txt';
         try {
-            gendiff($beforeJsonFile, $expectedTxtFile);
+            gendiff($beforeJsonFile, $expectedTxtFile, 'pretty');
+            $this->fail('exception expected');
+        } catch (\Exception $e) {
+            $this->assertTrue(true);
+        }
+    }
+    
+    public function testUnsupportedFormat()
+    {
+        $beforeJsonFile = __DIR__ . '/fixtures/before.json';
+        $afterJsonFile = __DIR__ . '/fixtures/after.json';
+        try {
+            gendiff($beforeJsonFile, $afterJsonFile, 'pretty1');
             $this->fail('exception expected');
         } catch (\Exception $e) {
             $this->assertTrue(true);
