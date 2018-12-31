@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\ExceptionTest;
+namespace App\Tests;
 
 use PHPUnit\Framework\TestCase;
 use function App\GenDiff\genDiff;
