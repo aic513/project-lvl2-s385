@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Renderers\Render;
+namespace Differ\Renderers\Render;
 
-use function App\Renderers\Pretty\pretty;
-use function App\Renderes\Plain\plain;
+use function Differ\Renderers\Pretty\pretty;
+use function Differ\Renderes\Plain\plain;
 
 function render($ast, $format)
 {

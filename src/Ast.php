@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ast;
+namespace Differ\Ast;
 
 function boolToStr($bool)
 {

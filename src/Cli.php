@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Cli;
+namespace Differf\Cli;
 
 use Docopt;
-use function App\GenDiff\genDiff;
+use function Differ\GenDiff\genDiff;
 
 const DOC =
 <<<DOC

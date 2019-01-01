@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Renderers\Pretty;
+namespace Differ\Renderers\Pretty;
 
 use function Funct\Collection\flattenAll;
 

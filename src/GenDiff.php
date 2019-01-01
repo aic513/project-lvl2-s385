@@ -1,12 +1,12 @@
 <?php
 
-namespace App\GenDiff;
+namespace Differ\GenDiff;
 
-use function App\Parser\getType;
-use function App\Parser\getData;
-use function App\Parser\parse;
-use function App\Ast\getAst;
-use function App\Renderers\Render\render;
+use function Differ\Parser\getType;
+use function Differ\Parser\getData;
+use function Differ\Parser\parse;
+use function Differ\Ast\getAst;
+use function Differ\Renderers\Render\render;
 
 function genDiff($pathBefore, $pathAfter, $format)
 {
